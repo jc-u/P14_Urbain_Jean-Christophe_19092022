@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserCheck } from '@fortawesome/free-solid-svg-icons'
 
 const Modal = ({ setModalShowed }) => {
   const CloseModal = (e) => {
@@ -8,8 +10,9 @@ const Modal = ({ setModalShowed }) => {
   return (
     <div className="modal__container" onClick={(e) => CloseModal(e)}>
       <div className="modal">
-        <h2>Employee Created!</h2>
         <button onClick={() => setModalShowed(false)}>X</button>
+        <FontAwesomeIcon icon={faUserCheck} />
+        <h2>Employee Created!</h2>
       </div>
     </div>
   );

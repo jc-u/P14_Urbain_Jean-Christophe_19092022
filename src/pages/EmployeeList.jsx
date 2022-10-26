@@ -1,31 +1,53 @@
-import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext, useState } from "react";
 import { DataContext } from "../data/DataContext";
+import Header from "../components/Header"
+import Footer from "../components/Footer"
 import Table from "../components/Table";
 import Select from "../components/Select";
 import { entries } from "../data/SelectContent"
+import Pagination from "../components/Pagination";
 
 
 const EmployeeList = () => {
   const data = useContext(DataContext);
   const { UserList } = data;
-
-  console.log(UserList);
+  const [selectedItemByPage, setSelectedItemByPage] = useState(entries[0].name)
+  const [ItemShowed, setItemShowed] = useState([])
+  const [userListAfterSearch, setUserListAfterSearch] = useState([])
 
   return (
+    <>
+    
     <div id="employee" className="container__employee">
-      <h1>Current Employees</h1>
+      <Header/>
+      <h2>Show Employees</h2>
       <div className="custom-field">
         <div className="entries-selector">
           <span>Show</span>
-          <Select type={entries} />
+          
+          <Select 
+          classSet={"table-dropdown"}
+          type={entries}
+          selectedItem={selectedItemByPage}
+          setSelected={setSelectedItemByPage} />
 
-          <span>entries</span>
         </div>
+        
+        <Table 
+        Userlist={UserList}
+        ItemShowed={ItemShowed}
+        setUserListAfterSearch={setUserListAfterSearch}
+        userListAfterSearch={userListAfterSearch} />
+        
+        <Pagination 
+        Userlist={UserList}
+        selectedItemByPage={selectedItemByPage}
+        userListAfterSearch={userListAfterSearch}
+        setItemShowed={setItemShowed} />
       </div>
-      <Table Userlist={UserList} />
-      <NavLink to={"/"}>Home</NavLink>
-    </div>
+      <Footer/>
+    </div>    
+    </>
   );
 };
 

@@ -1,0 +1,337 @@
+.home { 
+  position: relative;
+  min-height: 100%;
+  margin: 0 auto -40px;
+.home__container {
+
+  h2 {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  form {
+    margin: 20px auto;
+
+    .name, .date-of-birth, .address, .company {
+      width: 95%;
+      margin: 0 auto;
+    }
+
+    .react-datepicker__day--selected {
+      background-color: #93AD18;
+    }
+
+    .dropdown-list {
+      .dropdown-item {
+        &:hover {
+          background-color: $secondary;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .validation {
+    width: 218px;
+    margin: 30px auto 0;
+  }
+}
+  
+}
+
+@media (min-width: 768px) {
+  .home { 
+  .home__container {
+     h2 {
+      margin: 20px auto;
+      text-align: left;
+    }
+  
+    form {
+      .date-of-birth, .address, .company {
+        margin: 0 auto 20px;
+      }
+  
+      .react-datepicker__day--selected {
+      }
+    }
+  
+    .validation {
+    }
+  }
+    
+  }
+
+}
+
+@media (min-width: 820px) {
+  .home { 
+  .home__container {
+     h2 {
+      margin: 50px auto;
+    }
+  
+    form {
+      .date-of-birth, .address, .company {
+        margin: 0 auto 50px;
+      }
+  
+      .react-datepicker__day--selected {
+      }
+    }
+  
+    .validation {
+    }
+  }
+    
+  }
+
+}
+
+@media (min-width: 834px) {
+  .home { 
+  .home__container {
+     h2 {
+      margin: 40px auto;
+    }
+  
+    form {
+      .date-of-birth, .address, .company {
+        margin: 0 auto 40px;
+      }
+  
+      .react-datepicker__day--selected {
+      }
+    }
+  
+    .validation {
+    }
+  }
+    
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .home { 
+    position: unset;
+  .home__container {
+    width: 70%;
+    float: right;
+     h2 {
+      margin: 40px 0;
+    }
+  
+    form {
+      .date-of-birth, .address, .company {
+        margin: 0 auto 40px;
+      }
+  
+      .react-datepicker__day--selected {
+      }
+
+
+    }
+  
+    .validation {
+      margin: 30px 0 30px 20px;
+    }
+  }
+    
+  }
+
+}
+@media (min-width: 1280px) {
+  .home { 
+  .home__container {
+    h2 {
+      text-transform: uppercase;
+    }  
+    form {
+      .date-of-birth, .address, .company {
+      }
+  
+      .react-datepicker__day--selected {
+      }
+    }
+  
+    .validation {
+      margin: 30px 0 30px 150px;
+
+    }
+  }
+    
+  }
+
+}
+@media (min-width: 1366px) {
+  .home { 
+  .home__container {
+    h2 {
+    }  
+    form {
+      .date-of-birth, .address, .company {
+      }
+  
+      .react-datepicker__day--selected {
+      }
+
+        .city {
+        display: flex;
+      }
+
+      .company {
+        display: flex;
+      }
+    }
+  
+    .validation {
+      margin: 30px 0 30px 165px;
+
+    }
+  }
+    
+  }
+
+}
+@media (min-width: 1400px) {
+  .home { 
+  .home__container {
+    h2 {
+    }  
+    form {
+      .date-of-birth, .address, .company {
+      }
+  
+      .react-datepicker__day--selected {
+        margin: 0px 3px;
+      }
+      .react-datepicker-wrapper {
+        margin: 0px 3px;
+        width: 442px;
+      }
+
+      .name {
+        display: flex;
+        width: 95%;
+        margin: 0 auto;
+      }
+
+        .city {
+      }
+
+      .company {
+        display: flex;
+        width: 95%;
+        margin: 0 auto 40px;
+      }
+    }
+  
+    .validation {
+      margin: 30px 0 30px 170px;
+    }
+  }
+    
+  }
+
+}
+@media (min-width: 1440px) {
+  .home { 
+  .home__container {
+    h2 {
+    }  
+    form {
+      .date-of-birth, .address, .company {
+      }
+  
+      .react-datepicker__day--selected {
+      }
+      .react-datepicker-wrapper {
+      }
+
+      .name {
+      }
+
+        .city {
+      }
+
+      .company {
+      }
+    }
+  
+    .validation {
+      margin: 30px 0 30px 180px;
+    }
+  }
+    
+  }
+
+}
+@media (min-width: 1600px) {
+  .home { 
+  .home__container {
+    h2 {
+    }  
+    form {
+      .date-of-birth, .address, .company {
+      }
+  
+      .react-datepicker__day--selected {
+      }
+      .react-datepicker-wrapper {
+      }
+
+      .name {
+      }
+
+        .city {
+      }
+
+      #street {
+        width: 995px;
+      }
+
+      .company {
+      }
+    }
+  
+    .validation {
+      margin: 30px 0 30px 210px;
+    }
+  }
+    
+  }
+
+}
+@media (min-width: 1920px) {
+  .home { 
+  .home__container {
+    h2 {
+    }  
+    form {
+      .date-of-birth, .address, .company {
+      }
+  
+      .react-datepicker__day--selected {
+      }
+      .react-datepicker-wrapper {
+      }
+
+      .name {
+      }
+
+        .city {
+      }
+
+      .company {
+      }
+    }
+  
+    .validation {
+      margin: 30px 0 30px 280px;
+    }
+  }
+    
+  }
+
+}

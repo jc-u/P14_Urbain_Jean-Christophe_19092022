@@ -1,0 +1,475 @@
+.container__employee{
+  position: relative;
+  min-height: 100%;
+  margin: 0 auto -40px;
+
+  .custom-field {
+    min-height: 82vh;
+  }
+
+  h2 {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .entries-selector{
+    margin: 20px auto;
+  }
+
+  span {
+    font-weight: bold;
+    margin: 10px 20px;
+  }
+
+  .dropdown-select {
+    width: 15%;
+    background-color: $secondary;
+    border: solid $primary 2px;
+    color: white;
+    border-radius: 20px;
+    margin: 10px 20px;
+    .select {
+      margin: 0 0;
+    }
+  }
+  .dropdown-list {
+    margin: 0 42px;
+  }
+
+  .search__field {
+    width: 95%;
+    margin: 0 auto
+  }
+
+  table {
+    width: 100%;
+    margin: 0 auto;
+
+    .column-impair {
+      background-color: rgba($color: $secondary, $alpha: 0.4);
+    }
+  
+  .cell {
+    display: none;
+    }
+    
+    tr{
+    display: block;
+    padding: 40px 0;
+    }
+
+    .column-title {
+      display: none;
+    }
+    
+    td {
+    display: block;
+    text-align: right;
+    }
+    
+    td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    }
+  }
+  .pagination {
+    width: 95%;
+    margin: 0 auto;
+    .info{
+      margin: 20px 20px
+    }
+    .button-container {
+      display: flex;
+
+      button {
+        width: 45%;
+      }
+
+      .prevnext-button-disabled  {
+        background-color: rgba($color: $secondary, $alpha: 0.4);
+        margin: 0 10px;
+      }
+      .prevnext-button {
+        margin: 0 10px;
+      }
+
+      .pagination-button-focus, .pagination-button {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+@media (min-width:768px) {
+
+
+.container__employee{
+  .custom-field {
+  }
+
+  h2 {
+  }
+
+  .entries-selector{
+  }
+
+  span {
+  }
+
+  .component-container {
+    width: 95%;
+  }
+
+  .dropdown-select {
+    .select {
+    }
+  }
+  .dropdown-list {
+  }
+
+  .search__field {
+  }
+
+  table {
+
+    .column-impair, .column-pair {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  
+  .cell {
+    }
+    
+    tr{
+      display: flex;
+      padding: 10px 0;
+    }
+
+    .column-title {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    
+    td {
+    }
+    
+    td:before {
+      content: unset;
+    float: unset;
+    font-weight: bold;
+    }
+  }
+  .pagination {
+    .info{
+    }
+    .button-container {
+
+      button {
+      }
+
+      .prevnext-button-disabled  {
+      }
+      .prevnext-button {
+      }
+
+      .pagination-button-focus, .pagination-button {
+      }
+    }
+  }
+}
+}
+@media (min-width:1024px) {
+
+    #employee .header aside .navigation {
+      a {
+        &:nth-child(2){
+          p {
+            &:hover {
+            background-color: $secondary;
+            color: white;
+          } 
+          }
+         
+        }
+        &:nth-child(3) {
+          p{
+
+          
+      background-color: $secondary;
+      color: white;
+      }}
+    }
+    }
+
+.container__employee{
+  .custom-field {
+  }
+
+  h2 {
+    text-align: left;
+    margin-top: 40px;
+    text-transform: uppercase;
+  }
+
+  .entries-selector{
+    width: 70%;
+    float: right;
+    margin: 50px auto 5px;
+  }
+
+  span {
+  }
+
+  .component-container {     
+    width: 100%; 
+    margin: 0 auto;
+    .search__field {
+      width: 70%;
+      float: right;
+
+
+      input {
+      }
+    }
+
+  }
+
+  .dropdown-select {
+    width: 65px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: white;
+      color: $secondary;
+    }
+    .select {
+    }
+  }
+  .dropdown-list {
+    .dropdown-item {
+      width: 30px;
+      &:hover {
+        background-color: $secondary;
+        color: white;
+      }
+    }
+  }
+
+  .search__field {
+  }
+
+  table {
+    margin: 50px auto;
+
+    .column-impair {
+    }
+  
+  .cell {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+
+    .icon-container {
+      position: absolute;
+      right: -10px;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 20px;
+
+      .icon-up-hidden, .icon-down-hidden {
+        display: none;
+      }
+    }
+    }
+    
+    tr{
+      display: block;
+    }
+
+    .column-title {
+      display: flex;
+      padding: 40px 0 10px;
+    }
+    
+    td {
+      width: 100px;
+      text-align: center;
+    }
+
+  }
+  .pagination {
+    height: 200px;
+    .info{
+    }
+    .button-container {
+
+      button {
+      }
+
+      .prevnext-button-disabled  {
+      }
+      .prevnext-button {
+      }
+
+      .pagination-button-focus, .pagination-button {
+      }
+    }
+  }
+}
+}
+@media (min-width:1280px) {
+
+
+.container__employee{
+  .custom-field {
+  }
+
+  h2 {
+  }
+
+  .entries-selector{
+  }
+
+  span {
+  }
+
+  .component-container {     
+    .search__field {
+
+
+      input {
+      }
+    }
+
+  }
+
+  .dropdown-select {
+    .select {
+    }
+  }
+  .dropdown-list {
+  }
+
+  .search__field {
+  }
+
+  table {
+
+    .column-impair {
+    }
+  
+  .cell {
+    width: 130px;
+    }
+    
+    tr{
+    }
+
+    .column-title {
+    }
+    
+    td {
+      width: 130px;
+    }
+
+  }
+  .pagination {
+    .info{
+    }
+    .button-container {
+
+      button {
+      }
+
+      .prevnext-button-disabled  {
+      }
+      .prevnext-button {
+      }
+
+      .pagination-button-focus, .pagination-button {
+      }
+    }
+  }
+}
+}
+@media (min-width:1920px) {
+
+
+.container__employee{
+  .custom-field {
+  }
+
+  h2 {
+  }
+
+  .entries-selector{
+  }
+
+  span {
+  }
+
+  .component-container {     
+    .search__field {
+
+
+      input {
+      }
+    }
+
+  }
+
+  .dropdown-select {
+    .select {
+    }
+  }
+  .dropdown-list {
+  }
+
+  .search__field {
+  }
+
+  table {
+
+    .column-impair {
+    }
+  
+  .cell {
+    width: 200px;
+    }
+    
+    tr{
+    }
+
+    .column-title {
+    }
+    
+    td {
+      width: 200px;
+    }
+
+  }
+  .pagination {
+    .info{
+    }
+    .button-container {
+
+      button {
+      }
+
+      .prevnext-button-disabled  {
+      }
+      .prevnext-button {
+      }
+
+      .pagination-button-focus, .pagination-button {
+      }
+    }
+  }
+}
+}

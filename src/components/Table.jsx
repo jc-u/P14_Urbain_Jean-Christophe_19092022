@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSortUp, faSortDown } from "@fortawesome/free-solid-svg-icons";
 
 const Table = ({ Userlist, ItemShowed, setUserListAfterSearch , userListAfterSearch }) => {
   const [searchInput, SetSearchInput] = useState("");
   const [ascSort, SetAscSort] = useState(false);
+  const [activeColumn, SetActiveColumn] = useState("");
 
   const ascentFirstName = () => {
     Userlist.sort((a, b) => a.firstName.localeCompare(b.firstName));
@@ -11,6 +14,7 @@ const Table = ({ Userlist, ItemShowed, setUserListAfterSearch , userListAfterSea
     Userlist.sort((a, b) => b.firstName.localeCompare(a.firstName));
   };
   const firstNameSort = () => {
+    SetActiveColumn("First Name");
     SetAscSort(true);
     ascSort === true ? ascentFirstName() : descentFirstName();
     ascSort === true ? SetAscSort(false) : SetAscSort(true);
@@ -23,6 +27,7 @@ const Table = ({ Userlist, ItemShowed, setUserListAfterSearch , userListAfterSea
     Userlist.sort((a, b) => b.lastName.localeCompare(a.lastName));
   };
   const lastNameSort = () => {
+    SetActiveColumn("Last Name");
     SetAscSort(true);
     ascSort === true ? ascentLastName() : descentLastName();
     ascSort === true ? SetAscSort(false) : SetAscSort(true);
@@ -35,6 +40,7 @@ const Table = ({ Userlist, ItemShowed, setUserListAfterSearch , userListAfterSea
     Userlist.sort((a, b) => Number(new Date(a.startDate)) - Number(new Date(b.startDate)));
   };
   const startDateSort = () => {
+    SetActiveColumn("Start Date");
     SetAscSort(true);
     ascSort === true ? ascentStartDate() : descentStartDate();
     ascSort === true ? SetAscSort(false) : SetAscSort(true);
@@ -47,6 +53,7 @@ const Table = ({ Userlist, ItemShowed, setUserListAfterSearch , userListAfterSea
     Userlist.sort((a, b) => b.department.name.localeCompare(a.department.name));
   };
   const departmentSort = () => {
+    SetActiveColumn("Department");
     SetAscSort(true);
     ascSort === true ? ascentDepartment() : descentDepartment();
     ascSort === true ? SetAscSort(false) : SetAscSort(true);
@@ -60,6 +67,7 @@ const Table = ({ Userlist, ItemShowed, setUserListAfterSearch , userListAfterSea
     Userlist.sort((a, b) => Number(new Date(a.dateOfBirth)) - Number(new Date(b.dateOfBirth)));
   };
   const birthDateSort = () => {
+    SetActiveColumn("Date of Birth");
     SetAscSort(true);
     ascSort === true ? ascentBirthDate() : descentBirthDate();
     ascSort === true ? SetAscSort(false) : SetAscSort(true);
@@ -72,6 +80,7 @@ const Table = ({ Userlist, ItemShowed, setUserListAfterSearch , userListAfterSea
     Userlist.sort((a, b) => b.street.localeCompare(a.street));
   };
   const streetSort = () => {
+    SetActiveColumn("Street");
     SetAscSort(true);
     ascSort === true ? ascentStreet() : descentStreet();
     ascSort === true ? SetAscSort(false) : SetAscSort(true);
@@ -84,6 +93,7 @@ const Table = ({ Userlist, ItemShowed, setUserListAfterSearch , userListAfterSea
     Userlist.sort((a, b) => b.city.localeCompare(a.city));
   };
   const citySort = () => {
+    SetActiveColumn("City");
     SetAscSort(true);
     ascSort === true ? ascentCity() : descentCity();
     ascSort === true ? SetAscSort(false) : SetAscSort(true);
@@ -96,6 +106,7 @@ const Table = ({ Userlist, ItemShowed, setUserListAfterSearch , userListAfterSea
     Userlist.sort((a, b) => b.state.name.localeCompare(a.state.name));
   };
   const stateSort = () => {
+    SetActiveColumn("State");
     SetAscSort(true);
     ascSort === true ? ascentState() : descentState();
     ascSort === true ? SetAscSort(false) : SetAscSort(true);
@@ -107,6 +118,7 @@ const Table = ({ Userlist, ItemShowed, setUserListAfterSearch , userListAfterSea
     Userlist.sort((a, b) => b.zipCode.localeCompare(a.zipCode));
   };
   const zipCodeSort = () => {
+    SetActiveColumn("zipCode");
     SetAscSort(true);
     ascSort === true ? ascentZipCode() : descentZipCode();
     ascSort === true ? SetAscSort(false) : SetAscSort(true);
@@ -151,61 +163,216 @@ const Table = ({ Userlist, ItemShowed, setUserListAfterSearch , userListAfterSea
               onClick={() => {
                   firstNameSort();
                 }}>
-                  First Name</div>
+                  First Name
+                  <div className="icon-container">
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "First Name" ? "icon-up" : ascSort === true ? "icon-up-hidden" : "icon-up-visible"
+                    }
+                    icon={faSortUp}
+                  />
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "First Name"
+                        ? "icon-down"
+                        : ascSort === true
+                        ? "icon-down-visible"
+                        : "icon-down-hidden"
+                    }
+                    icon={faSortDown}
+                  />
+                </div>
+              </div>
             </th>
             <th>
               <div className="cell"
               onClick={() => {
                   lastNameSort();
                 }}>
-                  Last Name</div>
-            </th>
-            <th>
-              <div className="cell"
-              onClick={() => {
-                  startDateSort();
-                }}>
-                  Start Date</div>
-            </th>
-            <th>
-              <div className="cell" 
-              onClick={() => {
-                  departmentSort();
-                }}>
-                  Department</div>
+                  Last Name
+                  <div className="icon-container">
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "Last Name" ? "icon-up" : ascSort === true ? "icon-up-hidden" : "icon-up-visible"
+                    }
+                    icon={faSortUp}
+                  />
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "Last Name"
+                        ? "icon-down"
+                        : ascSort === true
+                        ? "icon-down-visible"
+                        : "icon-down-hidden"
+                    }
+                    icon={faSortDown}
+                  />
+                </div>
+              </div>
             </th>
             <th>
               <div className="cell"
               onClick={() => {
                   birthDateSort();
-                }}>Date of Birth</div>
+                }}>
+                  Start of Birth
+                  <div className="icon-container">
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "Date of Birth" ? "icon-up" : ascSort === true ? "icon-up-hidden" : "icon-up-visible"
+                    }
+                    icon={faSortUp}
+                  />
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "Date of Birth"
+                        ? "icon-down"
+                        : ascSort === true
+                        ? "icon-down-visible"
+                        : "icon-down-hidden"
+                    }
+                    icon={faSortDown}
+                  />
+                </div>
+              </div>
             </th>
             <th>
               <div className="cell"
               onClick={() => {
                   streetSort();
-                }}>Street</div>
+                }}>Street
+                  <div className="icon-container">
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "Street" ? "icon-up" : ascSort === true ? "icon-up-hidden" : "icon-up-visible"
+                    }
+                    icon={faSortUp}
+                  />
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "Street" ? "icon-down" : ascSort === true ? "icon-down-visible" : "icon-down-hidden"
+                    }
+                    icon={faSortDown}
+                  />
+                </div>
+              </div>
             </th>
             <th>
               <div
                 className="cell"
                 onClick={() => {
                   citySort();
-                }}>City</div>
+                }}>City
+                 <div className="icon-container">
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "City" ? "icon-up" : ascSort === true ? "icon-up-hidden" : "icon-up-visible"
+                    }
+                    icon={faSortUp}
+                  />
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "City" ? "icon-down" : ascSort === true ? "icon-down-visible" : "icon-down-hidden"
+                    }
+                    icon={faSortDown}
+                  />
+                </div>
+              </div>
             </th>
             <th>
               <div
                 className="cell"
                 onClick={() => {
                   stateSort();
-                }}>State</div>
+                }}>State
+                                <div className="icon-container">
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "State" ? "icon-up" : ascSort === true ? "icon-up-hidden" : "icon-up-visible"
+                    }
+                    icon={faSortUp}
+                  />
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "State" ? "icon-down" : ascSort === true ? "icon-down-visible" : "icon-down-hidden"
+                    }
+                    icon={faSortDown}
+                  />
+                </div>
+              </div>
             </th>
             <th>
               <div
                 className="cell"
                 onClick={() => {
                   zipCodeSort();
-                }}>Zip Code</div>
+                }}>Zip Code
+                 <div className="icon-container">
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "zipCode" ? "icon-up" : ascSort === true ? "icon-up-hidden" : "icon-up-visible"
+                    }
+                    icon={faSortUp}
+                  />
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "zipCode" ? "icon-down" : ascSort === true ? "icon-down-visible" : "icon-down-hidden"
+                    }
+                    icon={faSortDown}
+                  />
+                </div>
+              </div>
+            </th>
+            <th>
+              <div className="cell"
+              onClick={() => {
+                startDateSort();
+                }}>Start Date
+                 <div className="icon-container">
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "Start Date" ? "icon-up" : ascSort === true ? "icon-up-hidden" : "icon-up-visible"
+                    }
+                    icon={faSortUp}
+                  />
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "Start Date"
+                        ? "icon-down"
+                        : ascSort === true
+                        ? "icon-down-visible"
+                        : "icon-down-hidden"
+                    }
+                    icon={faSortDown}
+                  />
+                </div>
+              </div>
+            </th>
+            <th>
+              <div className="cell" 
+              onClick={() => {
+                  departmentSort();
+                }}>
+                  Department 
+                  <div className="icon-container">
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "Department" ? "icon-up" : ascSort === true ? "icon-up-hidden " : "icon-up-visible"
+                    }
+                    icon={faSortUp}
+                  />
+                  <FontAwesomeIcon
+                    className={
+                      activeColumn !== "Department"
+                        ? "icon-down"
+                        : ascSort === true
+                        ? "icon-down-visible"
+                        : "icon-down-hidden"
+                    }
+                    icon={faSortDown}
+                  />
+                </div>
+                </div>
             </th>
           </tr>
           {Userlist.length === 0 ? (

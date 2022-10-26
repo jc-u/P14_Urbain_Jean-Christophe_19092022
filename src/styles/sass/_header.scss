@@ -1,0 +1,170 @@
+.home__title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+}
+
+aside{
+  position: absolute;
+  bottom: -60px;
+  width: 100%;
+  .navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;  
+    height: 40px;
+
+
+    img {
+      width: 34px;
+    }
+    p {
+      display: none;
+    }
+    .picto {
+      color: $secondary;
+      width: 34px;
+      line-height: 34px;
+      }    
+      a {
+        &:first-child {
+        display: flex;
+        order: 2;
+    }
+    &:nth-child(2){
+      order: 1;
+    }
+    &:last-child {
+      
+      order: 3;
+  }
+      }
+      
+    }
+  }
+
+@media (min-width: 1024px) {
+  .home, #employee {
+
+  .header {
+.home__title {
+  display: block;
+  height: 80px;
+  line-height: 80px;
+
+  h2 {
+    display: none;
+  }
+
+}
+
+aside{
+  position: unset;
+  float: left;
+  width: 30%;
+  height: 100%;
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+
+img {
+      width: 150px;
+    }
+    p {
+      display: block;
+    }
+    .picto {
+      display: none;
+      }
+
+      a {
+        margin-bottom: 20px;
+        &:first-child {
+        display: flex;
+        order: 1;
+    }
+    &:nth-child(2){
+      order: 2;
+    }
+    &:last-child {
+      
+      order: 3;
+  }
+     p{
+      width: 218px;
+      height: 60px;
+      background-color: $secondary;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+      border: solid 1px $primary;
+      padding: 20px 20px;
+    
+      .fa-eye, .fa-user-plus {
+        margin-right: 10px;
+      }
+    }
+      }
+
+      .active {
+          p {
+            background-color: white;
+            color: $secondary;
+          }
+      }
+     }
+   }
+  }
+}
+}
+@media (min-width: 1280px) {
+  .home {
+
+  .header {
+.home__title {
+  height: 100px;
+  line-height: 100px;
+
+
+
+
+}
+
+aside{
+  .navigation {
+    margin-top: 70px ;
+
+img {
+    }
+    p {
+    }
+    .picto {
+      }
+
+      a {
+        &:first-child {
+    }
+    &:nth-child(2){
+    }
+    &:last-child {
+      
+  }
+     p{
+    
+      .fa-eye, .fa-user-plus {
+      }
+    }
+      }
+
+      .active {
+          p {
+          }
+      }
+     }
+   }  
+    }
+  }
+}

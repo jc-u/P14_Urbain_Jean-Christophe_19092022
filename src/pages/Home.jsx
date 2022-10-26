@@ -1,12 +1,12 @@
 import React, { useState, useContext, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import { DataContext } from "../data/DataContext";
+import Header from "../components/Header"
+import Footer from "../components/Footer"
 import Select from "../components/Select";
 import Modal from "../components/Modal";
 import { states, departement } from "../data/SelectContent";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
 
 const Home = () => {
   const data = useContext(DataContext);
@@ -62,60 +62,76 @@ const Home = () => {
   return (
     <div className="home">
          {ModalShowed ? <Modal setModalShowed={setModalShowed} /> : ""}
-      <div className="home__title">
-        <h1>HRnet</h1>
-      </div>
+      <Header/>
+        
       <div className="home__container">
-        <NavLink to={"/employee-list"}>View Current Employees</NavLink>
+
         <h2>Create Employee</h2>
         <form action="#" id="create-employee">
-          <label hmtlfor="first-name">First Name</label>
-          <input onChange={(e) => setUser({ ...User, firstName: e.target.value })} type="text" id="first-name" />
+          <h3>Personal Information</h3>
+          <div className="name">
+            <label hmtlfor="first-name">First Name</label>
+             <input onChange={(e) => setUser({ ...User, firstName: e.target.value })} type="text" id="first-name" placeholder="First Name" />
+              
+            <label hmtlfor="last-name">Last Name</label>
+            <input onChange={(e) => setUser({ ...User, lastName: e.target.value })} type="text" id="last-name" placeholder="Last Name" />
+          </div>
+          
+          <div className="date-of-birth">
+            <label hmtlfor="date-of-birth">Date of Birth</label>
+            <DatePicker selected={selectedDateOfBirth} onChange={(date) => setSelectedDateOfBirth(date)} setSelected={setSelectedDateOfBirth} placeholderText={'Date of Birth'}/>
+          </div>
 
-          <label hmtlfor="last-name">Last Name</label>
-          <input onChange={(e) => setUser({ ...User, lastName: e.target.value })} type="text" id="last-name" />
-
-          <label hmtlfor="date-of-birth">Date of Birth</label>
-          <DatePicker selected={selectedDateOfBirth} onChange={(date) => setSelectedDateOfBirth(date)} setSelected={setSelectedDateOfBirth} />
-
-          <label hmtlfor="start-date">Start Date</label>
-          <DatePicker selected={selectedStartDate} onChange={(date) => setSelectedStartDate(date)} setSelected={setSelectedStartDate} />
-
-          <fieldset className="address">
-            <legend>Address</legend>
+          <h3>Personal Address</h3>
+          <div className="address">
 
             <label hmtlfor="street">Street</label>
-            <input onChange={(e) => setUser({ ...User, street: e.target.value })} id="street" type="text" />
+            <input onChange={(e) => setUser({ ...User, street: e.target.value })} id="street" type="text" placeholder="Street"/>
+            <div className="city">
+              <label hmtlfor="city">City</label>
+              <input onChange={(e) => setUser({ ...User, city: e.target.value })} id="city" type="text" placeholder="City"/>
+            
+              <Select 
+                classSet={"dropdown"}
+                selectedItem={selectedState}
+                title="State"
+                placeholderText={"State"}
+                type={states}
+                setSelected={setSelectedState} />
 
-            <label hmtlfor="city">City</label>
-            <input onChange={(e) => setUser({ ...User, city: e.target.value })} id="city" type="text" />
+              <label hmtlfor="zip-code">Zip Code</label>
+              <input onChange={(e) => setUser({ ...User, zipCode: e.target.value })} id="zip-code" type="text" pattern="[0-9]*" placeholder="Zip Code" />
+            </div>
+          </div>
 
-            <Select 
-              classSet={"dropdown"}
-              selectedItem={selectedState}
-              title="State"
-              type={states}
-              setSelected={setSelectedState} />
+          <h3>Company Information</h3>
 
-            <label hmtlfor="zip-code">Zip Code</label>
-            <input onChange={(e) => setUser({ ...User, zipCode: e.target.value })} id="zip-code" type="number" />
-          </fieldset>
+          <div className="company">
+
+          <label hmtlfor="start-date">Start Date</label>
+          <DatePicker selected={selectedStartDate} onChange={(date) => setSelectedStartDate(date)} setSelected={setSelectedStartDate} placeholderText={'Date Start'}/>
 
           <Select classSet={"dropdown"}
             selectedItem={selectedDepartment}
             title="Department"
+            placeholderText={"Department"}
             type={departement}
             setSelected={setSelectedDepartment} />
+          </div>
         </form>
 
-        <button
-          onClick={() => {
-            onClick();
-          }}>
-          Save
-        </button>
+        <div className="validation">
+          <button
+            onClick={() => {
+              onClick();
+            }}>
+            Create Employee
+          </button>
+        </div>
       </div>
+      <Footer/>
     </div>
+    
   );
 };
 

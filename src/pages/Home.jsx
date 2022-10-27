@@ -3,10 +3,11 @@ import { DataContext } from "../data/DataContext";
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Select from "../components/Select";
-import Modal from "../components/Modal";
+//import Modal from "../components/Modal";
 import { states, departement } from "../data/SelectContent";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Modal from "@jc-u/modal/dist/Modal";
 
 const Home = () => {
   const data = useContext(DataContext);

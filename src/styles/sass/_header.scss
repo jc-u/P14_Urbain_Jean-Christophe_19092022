@@ -18,6 +18,7 @@ aside{
 
     img {
       width: 34px;
+      height: 31.27px;
     }
     p {
       display: none;
@@ -67,10 +68,12 @@ aside{
   .navigation {
     display: flex;
     flex-direction: column;
-    margin-top: 80px;
+    margin-top: 130px;
 
 img {
-      width: 150px;
+      width: 274px;
+      height: 262px;
+
     }
     p {
       display: block;
@@ -95,12 +98,12 @@ img {
      p{
       width: 218px;
       height: 60px;
-      background-color: $secondary;
+      background-color: $primary;
       color: white;
       font-size: 16px;
       font-weight: bold;
       border-radius: 10px;
-      border: solid 1px $primary;
+      border: solid 1px $secondary;
       padding: 20px 20px;
     
       .fa-eye, .fa-user-plus {
@@ -112,7 +115,7 @@ img {
       .active {
           p {
             background-color: white;
-            color: $secondary;
+            color: $primary;
           }
       }
      }
@@ -135,7 +138,7 @@ img {
 
 aside{
   .navigation {
-    margin-top: 70px ;
+    margin-top: 110px ;
 
 img {
     }

@@ -23,7 +23,7 @@
 
   .dropdown-select {
     width: 15%;
-    background-color: $secondary;
+    background-color: $primary;
     border: solid $primary 2px;
     color: white;
     border-radius: 20px;
@@ -84,11 +84,21 @@
 
       button {
         width: 45%;
+        background-color: $primary;
+
+        &:hover {
+          background-color: $secondary;
+        }
       }
 
       .prevnext-button-disabled  {
-        background-color: rgba($color: $secondary, $alpha: 0.4);
+        background-color: rgba($color: $primary, $alpha: 0.4);
         margin: 0 10px;
+        color: black;
+
+        &:hover {
+          background-color: rgba($color: $primary, $alpha: 0.4);
+        }
       }
       .prevnext-button {
         margin: 0 10px;
@@ -240,8 +250,8 @@
     cursor: pointer;
 
     &:hover {
-      background-color: white;
-      color: $secondary;
+      background-color: $secondary;
+      color: white;
     }
     .select {
     }
@@ -294,7 +304,7 @@
 
     .column-title {
       display: flex;
-      padding: 40px 0 10px;
+      padding: 100px 0 10px;
     }
     
     td {

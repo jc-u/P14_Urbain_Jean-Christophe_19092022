@@ -19,14 +19,9 @@
   font-weight: bold;
   text-align: center;
 }}
-@media (min-width: 1280px) {
-.footer {
-  bottom: -480px;}}
-@media (min-width: 1366px) {
-.footer {
-  bottom: -220px;
-}}
+
 @media (min-width: 1920px) {
-.footer {
-  bottom: 0;
-}}
+.container__employee{
+  .footer {
+  bottom: -37px;
+}}}

@@ -24,7 +24,7 @@ aside{
       display: none;
     }
     .picto {
-      color: $secondary;
+      color: $primary;
       width: 34px;
       line-height: 34px;
       }    
@@ -98,13 +98,18 @@ img {
      p{
       width: 218px;
       height: 60px;
-      background-color: $primary;
-      color: white;
+      background-color: white;
+      color: $primary;
       font-size: 16px;
       font-weight: bold;
       border-radius: 10px;
       border: solid 1px $secondary;
       padding: 20px 20px;
+
+      &:hover {
+        background-color: $primary;
+        color: white;
+      }
     
       .fa-eye, .fa-user-plus {
         margin-right: 10px;
@@ -114,8 +119,10 @@ img {
 
       .active {
           p {
-            background-color: white;
-            color: $primary;
+            background-color: $primary;
+            color: white;
+
+
           }
       }
      }

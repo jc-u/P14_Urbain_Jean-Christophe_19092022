@@ -14,8 +14,8 @@ const Header = () => {
     </div>        
     <aside>
       <div className="navigation">
-        <NavLink to={"/"}><img src={logo} alt="logo" aria-label={"Home"} title="HomePage" role="navigation"	aria-describedby="navigation" tabIndex="0"/></NavLink>
-        <NavLink to={"/"}><FontAwesomeIcon icon={faUserPlus} className="picto" aria-label="Home" title="HomePage" role="navigation"	aria-describedby="navigation" tabIndex="0" /><p><FontAwesomeIcon icon={faUserPlus}/>Create Employee</p></NavLink>      
+        <NavLink to={"/"} end><img src={logo} alt="logo" aria-label={"Home"} title="HomePage" role="navigation"	aria-describedby="navigation" tabIndex="0"/></NavLink>
+        <NavLink to={"/"} end><FontAwesomeIcon icon={faUserPlus} className="picto" aria-label="Home" title="HomePage" role="navigation"	aria-describedby="navigation" tabIndex="0" /><p><FontAwesomeIcon icon={faUserPlus}/>Create Employee</p></NavLink>      
         <NavLink to={"/employee-list"}><FontAwesomeIcon icon={faEye} className="picto" aria-label="Employee List" title="EmployeeList" role="navigation" aria-describedby="navigation" tabIndex="0"/><p><FontAwesomeIcon icon={faEye} />Show Employees</p></NavLink>
       </div>
     </aside>

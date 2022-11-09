@@ -9,6 +9,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Modal from "@jc-u/modal/dist/Modal";
 
+/* The above code is creating a form that allows the user to create an employee. */
+
 const Home = () => {
   const data = useContext(DataContext);
   const { UserList, setUserList } = data;

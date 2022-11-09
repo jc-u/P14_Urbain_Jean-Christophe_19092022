@@ -8,6 +8,8 @@ import { entries } from "../data/SelectContent"
 import Pagination from "../components/Pagination";
 
 
+/* A React component that is rendering a table with pagination. */
+
 const EmployeeList = () => {
   const data = useContext(DataContext);
   const { UserList } = data;

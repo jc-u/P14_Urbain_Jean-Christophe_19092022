@@ -2,6 +2,28 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSortUp, faSortDown } from "@fortawesome/free-solid-svg-icons";
 
+/**
+ * The function takes in a list of users, a list of users to show, a function to set the list of users
+ * to show, and the list of users to show after a search. 
+ * 
+ * The function then sets the state of the search input, the state of the ascending sort, and the state
+ * of the active column. 
+ * 
+ * The function then defines a bunch of functions that sort the list of users by different columns. 
+ * 
+ * The function then uses the useEffect hook to filter the list of users by the search input. 
+ * 
+ * The function then returns a table that displays the list of users to show. 
+ * 
+ * The table has a search bar that filters the list of users to show by the search input. 
+ * 
+ * The table has a bunch of columns that sort the list of users to show by different columns. 
+ * 
+ * The table has a bunch of
+ * @returns The Table component is being returned.
+ */
+
+
 const Table = ({ Userlist, ItemShowed, setUserListAfterSearch , userListAfterSearch }) => {
   const [searchInput, SetSearchInput] = useState("");
   const [ascSort, SetAscSort] = useState(false);

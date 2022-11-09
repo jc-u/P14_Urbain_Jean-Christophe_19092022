@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 
+/* The above code is a React component that renders a dropdown menu. */
+
 const Select = ({ classSet, title, type, setSelected, selectedItem }) => {
   const [openDropDown, setOpenDropDown] = useState(false);
 

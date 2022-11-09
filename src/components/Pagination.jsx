@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 
+/* The above code is a pagination component that is used to display the number of pages and the number
+of items per page. */
+
 const Pagination = ({ selectedItemByPage, Userlist, setItemShowed, userListAfterSearch }) => {
   let numberOfPages = Math.ceil(userListAfterSearch.length / selectedItemByPage);
 

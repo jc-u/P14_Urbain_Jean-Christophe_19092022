@@ -1,3 +1,5 @@
+/* A list of states and departments. */
+
 export const states = [
   {
     name: "Alabama",

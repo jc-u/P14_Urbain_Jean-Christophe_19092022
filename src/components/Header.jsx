@@ -5,6 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 
+/**
+ * The Header function returns a div with a className of "header" that contains a div with a className
+ * of "home__title" that contains an h1 and an h2, and an aside that contains a div with a className of
+ * "navigation" that contains a NavLink to the home page that contains an img, a NavLink to the home
+ * page that contains a FontAwesomeIcon and a p, and a NavLink to the employee-list page that contains
+ * a FontAwesomeIcon and a p.
+ * @returns A React component.
+ */
 const Header = () => {
   return (
 

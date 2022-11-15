@@ -8,6 +8,8 @@ import { states, departement } from "../data/SelectContent";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Modal from "@jc-u/modal/dist/Modal";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserCheck } from '@fortawesome/free-solid-svg-icons'
 
 /* The above code is creating a form that allows the user to create an employee. */
 
@@ -64,7 +66,7 @@ const Home = () => {
 
   return (
     <div className="home">
-         {ModalShowed ? <Modal setModalShowed={setModalShowed} /> : ""}
+         {ModalShowed ? <Modal setModalShowed={setModalShowed} message={<><FontAwesomeIcon icon={faUserCheck} /><h2>Employee Created!</h2></>} /> : ""}
       <Header/>
         
       <div className="home__container">
